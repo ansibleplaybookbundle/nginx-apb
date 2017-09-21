@@ -8,6 +8,7 @@ metadata:
   imageUrl: https://cdn-1.wp.nginx.com/wp-content/uploads/2017/08/N-hex-black-512x512.png
   displayName: NGINX (APB)
   longDescription: NGINX (pronounced "engine-x") is an open source reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a web server (origin server). The NGINX project started with a strong focus on high concurrency, high performance and low memory usage.
+  dependencies: ['docker.io/alessfg/openshift-nginx']
 plans:
   - name: default
     description: Default plan
