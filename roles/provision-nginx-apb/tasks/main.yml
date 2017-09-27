@@ -1,5 +1,5 @@
 ##############################################################################
-## Provision NGINX OSS APB
+## Provision NGINX APB
 ## This role executes much of the needed functionality to provision an
 ## application using an Ansible Playbook Bundle.  Included in the comments
 ## below are some sample resources for getting started deploying an application
@@ -12,24 +12,24 @@
 ## one deployment of an image to a new one.
 ## https://docs.openshift.org/latest/architecture/core_concepts/deployments.html#deployments-and-deployment-configurations
 ##############################################################################
-- name: Create NGINX OSS APB deployment config
+- name: Create NGINX APB deployment config
   openshift_v1_deployment_config:
-    name: nginx-oss-apb
+    name: nginx-apb
     namespace: '{{ namespace }}'
     state: present
     labels:
       app: '{{ namespace }}'
-      service: nginx-oss-apb
+      service: nginx-apb
     replicas: 1
     selector:
       app: '{{ namespace }}'
-      service: nginx-oss-apb
+      service: nginx-apb
     spec_template_metadata_labels:
       app: '{{ namespace }}'
-      service: nginx-oss-apb
+      service: nginx-apb
     containers:
       - image: docker.io/alessfg/openshift-nginx
-        name: nginx-oss-apb
+        name: nginx-apb
         ports:
           - container_port: 8080
             protocol: TCP
@@ -50,9 +50,9 @@
 ## set of replicated pods in order to proxy the connections it receives to them.
 ## https://docs.openshift.org/latest/architecture/core_concepts/pods_and_services.html#services
 ##############################################################################
-- name: Create NGINX OSS APB service
+- name: Create NGINX APB service
   k8s_v1_service:
-    name: nginx-oss-apb
+    name: nginx-apb
     namespace: '{{ namespace }}'
     state: present
     selector:
@@ -68,15 +68,15 @@
 ## selector, and an optional security configuration.
 ## https://docs.openshift.org/latest/architecture/core_concepts/routes.html
 ##############################################################################
-- name: Create NGINX OSS APB route
+- name: Create NGINX APB route
   openshift_v1_route:
-    name: nginx-oss-apb
+    name: nginx-apb
     namespace: '{{ namespace }}'
     spec_port_target_port: web
     labels:
       app: '{{ namespace }}'
-      service: nginx-oss-apb
-    to_name: nginx-oss-apb
+      service: nginx-apb
+    to_name: nginx-apb
 
 ##############################################################################
 ## Creates an NGINX default.conf file based on a Jinja2 template and the

@@ -1,10 +1,11 @@
-# Ansible Playbook Bundle for NGINX OSS
+# Ansible Playbook Bundle for NGINX
 
-An Ansible Playbook Bundle (APB) for deploying a single instance of NGINX OSS.
+An Ansible Playbook Bundle (APB) for deploying a single instance of NGINX.
 
-## How to Test the NGINX OSS Service
+## How to Test the NGINX Service
 
 1. Select the NGINX service, add it to `My Project`, select `Create` and click `View Project`.
+    * Do not enable load balancing at this stage or your deployment will fail.
 2. After waiting for a few seconds you should see a URL pop in the top-right corner of the project overview GUI. That URL will take you to the default NGINX landing page.
 
 ## Sample Tutorial Walkthrough
@@ -19,13 +20,13 @@ An Ansible Playbook Bundle (APB) for deploying a single instance of NGINX OSS.
 Name | Default Value | Required | Description
 ---|---|---|---
 lb | false | No | Enable Load Balancing
-server | - | No | Load Balanced Servers (Input as a Comma Separated List and Add Port 8080)
+server | - | No | Load Balanced Servers (Input as a Comma Separated List)
 lb_method | round_robin | No | Load Balancing Algorithm
 
 
 ## License
 
-[Simplified BSD License](https://github.com/nginxinc/nginx-oss-apb/blob/master/LICENSE)
+[Simplified BSD License](https://github.com/ansibleplaybookbundle/nginx-apb/blob/master/LICENSE)
 
 ## Author
 
