@@ -1,6 +1,5 @@
 version: 1.0
 name: nginx-apb
-image: ansibleplaybookbundle/nginx-apb
 description: An open source reverse proxy web server
 bindable: false
 async: optional
