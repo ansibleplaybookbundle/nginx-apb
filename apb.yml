@@ -1,4 +1,4 @@
-version: 1.0
+version: 1.0.0
 name: nginx-apb
 description: An open source reverse proxy web server
 bindable: false
